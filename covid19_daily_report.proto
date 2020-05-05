@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package "health.centiva.api";
+package health.centiva.api;
 
 message Covid19DailyReportRequest {
 
@@ -27,7 +27,7 @@ message Covid19DailyReportRequest {
     GENDER_FEMALE = 2;
     GENDER_OTHER = 3;
   }
-  Gender gender = 4;
+  Gender gender = 5;
   
   enum AgeBracket {
     AGE_BRACKET_0_24 = 0;
@@ -66,3 +66,11 @@ message Covid19DailyReportRequest {
   string post_code = 33;
 }
 
+message Covid19DailyReportResponse {
+  bool ok = 1;
+  string error = 2; // if !ok
+}
+
+service Covid19DailyReportService {
+  rpc SendDailyReport(Covid19DailyReportRequest) returns (Covid19DailyReportResponse) {};
+}
