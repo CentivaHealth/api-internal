@@ -1,29 +1,25 @@
-# README #
+## Centiva Health API ##
 
-This README would normally document whatever steps are necessary to get your application up and running.
 
-### What is this repository for? ###
+### Overview ###
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+This repository includes APIs used to interact with the Centiva platform
 
-### How do I get set up? ###
+The API is versioned to ensure that compatibility-breaking changes do not affect the functionality of the platform.
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
+### The COVID-19 API
+ 
+Based on Google Protocol buffer and gRPC technologies, this API is used by the Centiva app to send/request relevant information
+for the CovAid feature.
 
-### Contribution guidelines ###
+# AddDailyReport
 
-* Writing tests
-* Code review
-* Other guidelines
+# AddTestReport
 
-### Who do I talk to? ###
+# AddGeoCheckins
 
-* Repo owner or admin
-* Other community or team contact
+# GetFlaggedGeoCheckins
+
+
+### Contact ###
+Please email info@centiva.health or visit us on https://centiva.health/ to learn more or to get in touch with us.

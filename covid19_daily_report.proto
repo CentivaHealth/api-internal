@@ -1,0 +1,68 @@
+syntax = "proto3";
+
+package "health.centiva.api";
+
+message Covid19DailyReportRequest {
+
+  string pub_key = 1;
+
+  // auth_token is issued by Centiva.
+  // It is verified with <pub_key> as the message, and centiva pub_key as the key.
+  string auth_token = 2;
+
+  // signature is signed with the user's key.
+  // The message is the pub key, followed by the concatenated text representations of
+  // all fields following the signature. enums and ints are represented in decimal form
+  // and booleans are represented as 0 (false) or 1 (true) characters.
+  // All fields are represented. Scalar fields not explicitly set in the message are
+  // automatically set to default values (empty strings or 0 numerical) during the
+  // parsing of the protobuf.
+  string signature = 3;
+
+  string language_code = 4;
+
+  enum Gender {
+    GENDER_UNSPECIFIED = 0;
+    GENDER_MALE = 1;
+    GENDER_FEMALE = 2;
+    GENDER_OTHER = 3;
+  }
+  Gender gender = 4;
+  
+  enum AgeBracket {
+    AGE_BRACKET_0_24 = 0;
+    AGE_BRACKET_25_64 = 1;
+    AGE_BRACKET_65_PLUS = 2;
+  }
+  AgeBracket age_bracket = 6;
+
+  bool test_performed = 7;
+  bool test_outcome_known = 8;
+  bool test_outcome = 9;
+
+  bool fever = 10;
+  bool cough_sore_throat_shortness_of_breath = 11;
+  bool chest_pain = 12;
+  bool headache = 13;
+  bool fatigue = 14;
+  bool nausea = 15;
+  bool muscle_pain = 16;
+  bool runny_nose = 17;
+  bool diarrhea = 18;
+  bool loss_of_smell_or_taste = 19;
+
+  string other_symptom = 20;
+
+  bool on_meds_hypertension = 21;
+  bool on_meds_diabetes = 22;
+  bool on_meds_immunosuppression = 23;
+  bool chemo_or_radio_therapy = 24;
+  bool other_specified_health_condition = 25;
+
+  bool proximity = 29;
+
+  string country_code = 31;
+  string place_name = 32;
+  string post_code = 33;
+}
+

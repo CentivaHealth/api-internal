@@ -1,0 +1,37 @@
+syntax = "proto3";
+package health.centiva.api;
+
+message Covid19TestReportRequest {
+  string pub_key = 1;
+
+  string auth_token = 2;
+
+  // The message for the signature is the concatenated string:
+  // pubKey, CountryCode, Place, PostCode, TestDate, ResultDate, outcome
+  // where the dates are represented as decimal strings and
+  // the boolean outcome is represented as the character 0 or 1.
+  string signature = 3;
+
+  string country_code = 4;  // 2-letter code
+  string place = 5;
+  string post_code = 6;
+
+  // Date format: unix epoch (aka unix time or posix date)
+  // number of seconds since 1970-01-01 00:00:00 UTC
+  int64 test_date = 7;
+  int64 result_date = 8;
+
+  bool outcome = 9; // positive: true, negative: false
+  bool shareable = 10;
+}
+
+// Use deadline of 5 seconds for this request.
+message Covid19TestReportResponse {
+  bool ok = 1;
+  string error = 2; // if !ok
+}
+
+service Covid19TestReportService {
+  rpc SendTestReport(Covid19TestReportRequest) returns (Covid19TestReportResponse) {};
+}
+
