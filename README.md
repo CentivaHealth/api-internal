@@ -12,13 +12,13 @@ The API is versioned to ensure that compatibility-breaking changes do not affect
 Based on Google Protocol buffer and gRPC technologies, this API is used by the Centiva app to send/request relevant information
 for the CovAid feature.
 
-# AddDailyReport
+* SendTestReport (service Covid19TestReportService)
 
-# AddTestReport
+* SendDailyReport (service Covid19DailyReportService)
 
-# AddGeoCheckins
+* SendGeoCheckins (service Covid19GeoAidService)
 
-# GetFlaggedGeoCheckins
+* GetFlaggedGeoCheckins (service Covid19GeoAidService)
 
 
 ### Contact ###
