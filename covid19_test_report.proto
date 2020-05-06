@@ -22,7 +22,6 @@ message Covid19TestReportRequest {
   int64 result_date = 8;
 
   bool outcome = 9; // positive: true, negative: false
-  bool shareable = 10;
 }
 
 // Use deadline of 5 seconds for this request.
