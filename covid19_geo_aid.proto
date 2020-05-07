@@ -1,0 +1,32 @@
+syntax = "proto3";
+package health.centiva.api;
+
+message GeoCheckinsRequest {
+    string pub_key = 1; // user's alphanumeric public key
+    string auth_token = 2; // signature of user pubkey by Centiva private key
+
+    // The message for the signature is the concatenated string of all CheckIns values
+    string signature = 3;
+
+
+    message CheckIn {
+        int32 type = 1; // type of check in: 0 = GPS, 1 = QR
+        string poiId = 2; // id of QR code
+        string point = 3; // MGRS Point with 10m accuracy
+        string area = 4; // MGRS Area with 100m accuracy
+        int32 startTime = 5; // timestamp when the point became contaminated
+        int32 endTime = 6; // timestamp until when the user was there
+    }
+
+    repeated CheckIn check_ins = 4;
+
+}
+
+message GeoCheckinsResponse {
+    bool ok = 1;
+    string error = 2; // if !ok
+}
+
+service Covid19GeoAidService {
+    rpc SendGeoCheckins(GeoCheckinsRequest) returns (GeoCheckinsResponse) {};
+}
