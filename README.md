@@ -20,6 +20,8 @@ for the CovAid feature.
 
 * GetFlaggedGeoCheckins (service Covid19GeoAidService)
 
+* DeleteDataForKey(serviceCovid19GDPRService)
+
 
 ### Contact ###
 Please email info@centiva.health or visit us on https://centiva.health/ to learn more or to get in touch with us.
