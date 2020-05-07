@@ -42,28 +42,27 @@ message Covid19DailyReportRequest {
 
   bool fever = 10;
   bool cough_sore_throat_shortness_of_breath = 11;
-  bool chest_pain = 12;
-  bool headache = 13;
-  bool fatigue = 14;
-  bool nausea = 15;
-  bool muscle_pain = 16;
-  bool runny_nose = 17;
-  bool diarrhea = 18;
-  bool loss_of_smell_or_taste = 19;
+  bool muscle_ache = 12;
+  bool loss_of_smell_or_taste = 13;
+  bool headache = 14;
+  bool diarrhea = 15;
+  bool conjunctivitis = 16;
+  bool head_cold = 17;
 
-  string other_symptom = 20;
 
-  bool on_meds_hypertension = 21;
-  bool on_meds_diabetes = 22;
-  bool on_meds_immunosuppression = 23;
-  bool chemo_or_radio_therapy = 24;
-  bool other_specified_health_condition = 25;
+  string other_symptom = 18;
 
-  bool proximity = 29;
+  bool on_meds_hypertension = 19;
+  bool on_meds_diabetes = 20;
+  bool on_meds_immunosuppression = 21;
+  bool chemo_or_radio_therapy = 22;
+  bool other_specified_health_condition = 23;
 
-  string country_code = 31;
-  string place_name = 32;
-  string post_code = 33;
+  bool proximity = 24;
+
+  string country_code = 25;
+  string place_name = 26;
+  string post_code = 27;
 }
 
 message Covid19DailyReportResponse {
