@@ -9,7 +9,7 @@ message GeoCheckinsRequest {
     string signature = 3;
 
 
-    message CheckIns {
+    message CheckIn {
         int32 type = 1; // type of check in: 0 = GPS, 1 = QR
         string poiId = 2; // id of QR code
         string point = 3; // MGRS Point with 10m accuracy
@@ -18,7 +18,7 @@ message GeoCheckinsRequest {
         int32 endTime = 6; // timestamp until when the user was there
     }
 
-    repeated CheckIns check_ins = 4;
+    repeated CheckIn check_ins = 4;
 
 }
 
