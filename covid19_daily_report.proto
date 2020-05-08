@@ -41,7 +41,7 @@ message Covid19DailyReportRequest {
   bool test_outcome = 9;
 
   bool fever = 10;
-  bool cough_sore_throat_shortness_of_breath = 11;
+  bool cough_sore_throat_or_shortness_of_breath = 11;
   bool muscle_ache = 12;
   bool loss_of_smell_or_taste = 13;
   bool headache = 14;
@@ -57,7 +57,7 @@ message Covid19DailyReportRequest {
   bool chemo_or_radio_therapy = 23;
   bool other_specified_health_condition = 24;
 
-  bool proximity = 25
+  bool proximity = 25;
 
   string country_code = 26;
   string place_name = 27;
