@@ -48,15 +48,14 @@ message Covid19DailyReportRequest {
   bool diarrhea = 15;
   bool conjunctivitis = 16;
   bool head_cold = 17;
-
-
   string other_symptom = 18;
 
   bool on_meds_hypertension = 19;
   bool on_meds_diabetes = 20;
-  bool on_meds_immunosuppression = 21;
-  bool chemo_or_radio_therapy = 22;
-  bool other_specified_health_condition = 23;
+  bool chronic_respiratory_issues = 21;
+  bool on_meds_immunosuppression = 22;
+  bool chemo_or_radio_therapy = 23;
+  bool other_specified_health_condition = 24;
 
   bool proximity = 24;
 
