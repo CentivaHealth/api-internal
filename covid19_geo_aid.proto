@@ -27,6 +27,23 @@ message GeoCheckinsResponse {
     string error = 2; // if !ok
 }
 
+message GeoGetCheckinsRequest {
+    string pub_key = 1; // user's alphanumeric public key
+    string auth_token = 2; // signature of user pubkey by Centiva private key
+
+    // The message for the signature is the concatenated string of all Params values
+    string signature = 3;
+
+    string area = 4; // MGRS area with 100m accuracy
+}
+
+message GeoGetCheckinsResponse {
+    bool ok = 1;
+    string error = 2; // if !ok
+}
+
+
 service Covid19GeoAidService {
     rpc SendGeoCheckins(GeoCheckinsRequest) returns (GeoCheckinsResponse) {};
+    rpc GetGeoCheckins(GeoGetCheckinsRequest) returns (GeoGetCheckinsResponse) {};
 }
