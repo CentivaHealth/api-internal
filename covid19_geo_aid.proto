@@ -31,7 +31,7 @@ message GeoGetCheckinsRequest {
     string pub_key = 1; // user's alphanumeric public key
     string auth_token = 2; // signature of user pubkey by Centiva private key
 
-    // The message for the signature is the concatenated string of all Params values
+    // The message for the signature is the concatenated string of the pub_key and the area field
     string signature = 3;
 
     string area = 4; // MGRS area with 100m accuracy
