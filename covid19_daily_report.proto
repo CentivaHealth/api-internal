@@ -28,40 +28,37 @@ message Covid19DailyReportRequest {
     GENDER_OTHER = 3;
   }
   Gender gender = 5;
-  
-  enum AgeBracket {
-    AGE_BRACKET_0_24 = 0;
-    AGE_BRACKET_25_64 = 1;
-    AGE_BRACKET_65_PLUS = 2;
-  }
-  AgeBracket age_bracket = 6;
 
-  bool test_performed = 7;
-  bool test_outcome_known = 8;
-  bool test_outcome = 9;
+  int32 age_bracket = 6;
 
-  bool fever = 10;
-  bool cough_sore_throat_or_shortness_of_breath = 11;
-  bool muscle_ache = 12;
-  bool loss_of_smell_or_taste = 13;
-  bool headache = 14;
-  bool diarrhea = 15;
-  bool conjunctivitis = 16;
-  bool head_cold = 17;
-  string other_symptom = 18;
+  int32 bracket_size_years = 7;
 
-  bool on_meds_hypertension = 19;
-  bool on_meds_diabetes = 20;
-  bool chronic_respiratory_issues = 21;
-  bool on_meds_immunosuppression = 22;
-  bool chemo_or_radio_therapy = 23;
-  bool other_specified_health_condition = 24;
+  bool test_performed = 8;
+  bool test_outcome_known = 9;
+  bool test_outcome = 10;
 
-  bool proximity = 25;
+  bool fever = 11;
+  bool cough_sore_throat_or_shortness_of_breath = 12;
+  bool muscle_ache = 13;
+  bool loss_of_smell_or_taste = 14;
+  bool headache = 15;
+  bool diarrhea = 16;
+  bool conjunctivitis = 17;
+  bool head_cold = 18;
+  string other_symptom = 19;
 
-  string country_code = 26;
-  string place_name = 27;
-  string post_code = 28;
+  bool on_meds_hypertension = 20;
+  bool on_meds_diabetes = 21;
+  bool chronic_respiratory_issues = 22;
+  bool on_meds_immunosuppression = 23;
+  bool chemo_or_radio_therapy = 24;
+  bool other_specified_health_condition = 25;
+
+  bool proximity = 26;
+
+  string country_code = 27;
+  string place_name = 28;
+  string post_code = 29;
 }
 
 message Covid19DailyReportResponse {

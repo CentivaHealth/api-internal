@@ -18,10 +18,23 @@ message Covid19TestReportRequest {
 
   // Date format: unix epoch (aka unix time or posix date)
   // number of seconds since 1970-01-01 00:00:00 UTC
-  int64 test_date = 7;
-  int64 result_date = 8;
 
-  bool outcome = 9; // positive: true, negative: false
+  enum Gender {
+    GENDER_UNSPECIFIED = 0;
+    GENDER_MALE = 1;
+    GENDER_FEMALE = 2;
+    GENDER_OTHER = 3;
+  }
+  Gender gender = 7;
+
+  int32 age_bracket = 8;
+
+  int32 bracket_size_years = 9;
+
+  int64 test_date = 10;
+  int64 result_date = 11;
+
+  bool outcome = 12; // positive: true, negative: false
 }
 
 // Use deadline of 5 seconds for this request.
