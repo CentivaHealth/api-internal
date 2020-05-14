@@ -40,6 +40,8 @@ message GeoGetCheckinsRequest {
 message GeoGetCheckinsResponse {
     bool ok = 1;
     string error = 2; // if !ok
+
+    repeated GeoCheckinsRequest.CheckIn data = 3;
 }
 
 
