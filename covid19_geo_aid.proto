@@ -7,6 +7,7 @@ message GeoCheckinsRequest {
 
     // The message for the signature is the concatenated string of all CheckIns values
     string signature = 3;
+    string verification_code = 4;
 
 
     message CheckIn {
@@ -16,9 +17,10 @@ message GeoCheckinsRequest {
         string area = 4; // MGRS Area with 100m accuracy
         int64 startTime = 5; // timestamp when the point became contaminated
         int64 endTime = 6; // timestamp until when the user was there
+        bool is_verified = 7; // is check in verified by verification_code
     }
 
-    repeated CheckIn check_ins = 4;
+    repeated CheckIn check_ins = 5;
 
 }
 
