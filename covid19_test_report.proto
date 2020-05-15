@@ -16,6 +16,8 @@ message Covid19TestReportRequest {
   string place = 5;
   string post_code = 6;
 
+  string verification_code = 7;
+
   // Date format: unix epoch (aka unix time or posix date)
   // number of seconds since 1970-01-01 00:00:00 UTC
 
@@ -25,16 +27,16 @@ message Covid19TestReportRequest {
     GENDER_FEMALE = 2;
     GENDER_OTHER = 3;
   }
-  Gender gender = 7;
+  Gender gender = 8;
 
-  int32 age_bracket = 8;
+  int32 age_bracket = 9;
 
-  int32 bracket_size_years = 9;
+  int32 bracket_size_years = 10;
 
-  int64 test_date = 10;
-  int64 result_date = 11;
+  int64 test_date = 11;
+  int64 result_date = 12;
 
-  bool outcome = 12; // positive: true, negative: false
+  bool outcome = 13; // positive: true, negative: false
 }
 
 // Use deadline of 5 seconds for this request.
