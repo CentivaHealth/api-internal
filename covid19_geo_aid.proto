@@ -14,8 +14,8 @@ message GeoCheckinsRequest {
         string poiId = 2; // id of QR code
         string point = 3; // MGRS Point with 10m accuracy
         string area = 4; // MGRS Area with 100m accuracy
-        int32 startTime = 5; // timestamp when the point became contaminated
-        int32 endTime = 6; // timestamp until when the user was there
+        int64 startTime = 5; // timestamp when the point became contaminated
+        int64 endTime = 6; // timestamp until when the user was there
     }
 
     repeated CheckIn check_ins = 4;
