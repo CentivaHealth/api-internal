@@ -5,8 +5,8 @@ message ChangeTokenRequest {
     string primary_pub_key = 1;
     string primary_auth_token = 2;
     string new_pub_key = 3;
-    string primary_signature = 4; // data is  primary_pub_key + new_pub_key signed by original private key
-    string new_signature = 5; // data is  primary_pub_key + new_pub_key signed by new private key
+    string primary_key_signature = 4; // data is  primary_pub_key + new_pub_key signed by original private key
+    string new_key_signature = 5; // data is  primary_pub_key + new_pub_key signed by new private key
 }
 
 message ChangeTokenResponse {
