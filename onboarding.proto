@@ -1,0 +1,16 @@
+syntax = "proto3";
+package health.centiva.api;
+
+message ChangeTokenRequest {
+    string original_pub_key = 1;
+    string original_auth_token = 2;
+    string new_pub_key = 3;
+    string original_signature = 4; // data is  original_pub_key + new_pub_key signed by original private key
+    string new_signature = 5; // data is  original_pub_key + new_pub_key signed by new private key
+}
+
+message ChangeTokenResponse {
+    bool ok = 1;
+    string error = 2; // if !ok
+    string auth_token = 3; // if ok
+}
