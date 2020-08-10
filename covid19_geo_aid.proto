@@ -21,7 +21,8 @@ message GeoCheckinsRequest {
     }
 
     repeated CheckIn check_ins = 5;
-
+    
+    string session_pub_key = 6; // Use to verify data that is signed by ephemeral key
 }
 
 message GeoCheckinsResponse {

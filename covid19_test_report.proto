@@ -37,6 +37,8 @@ message Covid19TestReportRequest {
   int64 result_date = 12;
 
   bool outcome = 13; // positive: true, negative: false
+
+  string session_pub_key = 14; // Use to verify data that is signed by ephemeral key
 }
 
 // Use deadline of 5 seconds for this request.

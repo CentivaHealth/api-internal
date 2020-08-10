@@ -59,6 +59,7 @@ message Covid19DailyReportRequest {
   string country_code = 27;
   string place_name = 28;
   string post_code = 29;
+  string session_pub_key = 30; // Use to verify data that is signed by ephemeral key
 }
 
 message Covid19DailyReportResponse {
